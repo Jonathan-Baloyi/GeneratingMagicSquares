@@ -1,2 +1,61 @@
-# GeneratingMagicSquares
-This is a java code which generates magic squares
+import java.io.Console;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//Magic square
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Give an odd number: ");
+        int n = sc.nextInt();
+        
+        // 2D Array
+        int[][] magicSquare = new int[n][n];
+
+        int number = 1;
+        int row = 0;
+        int column = n / 2;
+        int curr_row;
+        int curr_col;
+        while (number <= n * n)
+        {
+            magicSquare[row][column] = number;
+            number++;
+            curr_row = row;
+            curr_col = column;
+            row -= 1;
+            column += 1;
+            if (row == -1)
+            {
+                row = n - 1;
+            }
+            if (column == n)
+            {
+                column = 0;
+            }
+            if (magicSquare[row][column] != 0)
+            {
+                row = curr_row + 1;
+                column = curr_col;
+                if (row == -1)
+                {
+                    row = n - 1;
+                }
+            }
+        }
+
+        for (int i = 0; i < magicSquare.length; i++)
+        {
+            for (int j = 0; j < magicSquare.length; j++)
+            {
+                System.out.print(magicSquare[i][j] + " ");
+            }
+            System.out.println();
+        }
+	  }
+
+}
+
