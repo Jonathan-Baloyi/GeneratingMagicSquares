@@ -7,9 +7,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		//Magic square
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Give an odd number: ");
+	//Magic square
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Give an odd number: ");
         int n = sc.nextInt();
         
         // 2D Array
